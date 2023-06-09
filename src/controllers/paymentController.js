@@ -3,7 +3,6 @@ const { catchError } = require('../middlewares/error.js');
 
 const createPayment = catchError(async (req, res) => {
   const { orderNumber } = req.body;
-  console.log(orderNumber);
 
   const payment = await paymentService.createPayment(orderNumber);
   return res.status(201).json(payment);
