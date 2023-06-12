@@ -97,7 +97,6 @@ const createPayment = async (orderNumber) => {
   } catch (err) {
     await queryRunner.rollbackTransaction();
     const error = new Error('INVALID_DATA_INPUT');
-
     error.statusCode = 500;
     throw error;
   } finally {
