@@ -31,7 +31,7 @@
 <div style="display: flex; align-items: flex-start;"><img src="https://techstack-generator.vercel.app/nginx-icon.svg" alt="icon" width="52" height="52" /><img src="https://techstack-generator.vercel.app/mysql-icon.svg" alt="icon" width="52" height="52" /><img src="https://techstack-generator.vercel.app/js-icon.svg" alt="icon" width="52" height="52" /><img src="https://techstack-generator.vercel.app/restapi-icon.svg" alt="icon" width="52" height="52" /></div>
 
 ### 서비스 소개
-<br />
+
 - 온라인에서 오프라인 환경처럼 구매 가능한 가구 e-commerce 제공 플랫폼.
 - 제품과 사용자를 연결시켜주는 매개체 역할을 하는 플랫폼
 - 다양한 제품 이미지와 쇼룸을 활용하여 오프라인 매장에서 경험 할 수 있는 제품 경험 기회를 온라인으로 제공.
