@@ -41,9 +41,9 @@ describe('POST /cart', () => {
       quantity: 2,
     };
 
-    // const decodedToken = { id: '1' };
+    const decodedToken = { id: '1' };
 
-    // jwt.verify = jest.fn().mockImplementation(() => decodedToken);
+    jwt.verify = jest.fn().mockImplementation(() => decodedToken);
 
     const response = await request(app)
       .post('/cart')
