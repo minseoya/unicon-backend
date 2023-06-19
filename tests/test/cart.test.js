@@ -10,10 +10,13 @@ jest.mock('jsonwebtoken');
 describe('POST /cart', () => {
   let app;
 
+  const decodedToken = { id: '1' };
+  jwt.verify = jest.fn().mockImplementation(() => decodedToken);
+
   beforeAll(async () => {
     app = createApp();
     await dataSource.initialize();
-    await userFixture.createUser([userdata.kakaoUser, userdata.naverUser]);
+    await userFixture.createUser([userdata.cuUser]);
     jwt.verify.mockImplementation(() => ({ id: 1 }));
   });
 
@@ -23,10 +26,6 @@ describe('POST /cart', () => {
       quantity: 2,
     };
 
-    const decodedToken = { id: '1' };
-
-    jwt.verify = jest.fn().mockImplementation(() => decodedToken);
-
     const response = await request(app)
       .post('/cart')
       .set('Authorization', 'token')
@@ -35,6 +34,16 @@ describe('POST /cart', () => {
     expect(response.body).toEqual({ message: 'cart created' });
     expect(response.statusCode).toBe(200); // 응답 상태 코드가 200인지 확인
   });
+
+  test('DELETE cart item', async () => {
+    const response = await request(app)
+      .delete('/cart/1')
+      .set('Authorization', 'token');
+
+    // expect(response.body).toEqual({ message: 'cart created' });ㅜ
+    expect(response.statusCode).toBe(204); // 응답 상태 코드가 200인지 확인
+  });
+
   afterAll(async () => {
     await dataSource.query('SET FOREIGN_KEY_CHECKS=0');
     await dataSource.query(`TRUNCATE users`);

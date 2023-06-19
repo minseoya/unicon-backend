@@ -18,9 +18,19 @@ const naverUser = {
   gender: 'F',
 };
 
+const cuUser = {
+  name: 'cu',
+  password: 'testpassword!',
+  email: 'testCu@kakao.com',
+  phone: '010-1234-1234',
+  address: '테헤란로427',
+  birth: '1998-01-02',
+  gender: 'F',
+};
+
 const defaltProductListEnum = Object.freeze({
   DEFAULT_LIMIT: 15,
   DEFAULT_OFFSET: 0,
 });
 
-module.exports = { kakaoUser, naverUser };
+module.exports = { kakaoUser, naverUser, cuUser };
