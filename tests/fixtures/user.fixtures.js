@@ -30,5 +30,15 @@ const createUser = async (userList) => {
     [data]
   );
 };
+const createCart = async () => {
+  return dataSource.query(
+    `INSERT INTO cart(
+      user_id,
+      product_items,
+      quantity
+ ) VALUES (1,2,1);
+`
+  );
+};
 
-module.exports = { createUser };
+module.exports = { createUser, createCart };

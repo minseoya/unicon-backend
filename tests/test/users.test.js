@@ -4,7 +4,7 @@ const { createApp } = require('../../app');
 const dataSource = require('../../src/models/appDataSource');
 const userdata = require('../fixtures/user.data');
 
-describe('Sign up/', () => {
+describe('Sign /', () => {
   let app;
 
   beforeAll(async () => {

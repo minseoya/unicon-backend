@@ -1,13 +1,12 @@
 const jwt = require('jsonwebtoken');
 const request = require('supertest');
-const userService = require('../../src/services/userService');
 const userFixture = require('../fixtures/user.fixtures');
 const { createApp } = require('../../app');
 const dataSource = require('../../src/models/appDataSource');
 const userdata = require('../fixtures/user.data');
 jest.mock('jsonwebtoken');
 
-describe('POST /cart', () => {
+describe('/cart', () => {
   let app;
 
   const decodedToken = { id: '1' };
@@ -32,7 +31,7 @@ describe('POST /cart', () => {
       .send(requestBody);
 
     expect(response.body).toEqual({ message: 'cart created' });
-    expect(response.statusCode).toBe(200); // 응답 상태 코드가 200인지 확인
+    expect(response.statusCode).toBe(200);
   });
 
   test('DELETE cart item', async () => {
@@ -40,8 +39,7 @@ describe('POST /cart', () => {
       .delete('/cart/1')
       .set('Authorization', 'token');
 
-    // expect(response.body).toEqual({ message: 'cart created' });ㅜ
-    expect(response.statusCode).toBe(204); // 응답 상태 코드가 200인지 확인
+    expect(response.statusCode).toBe(204);
   });
 
   afterAll(async () => {

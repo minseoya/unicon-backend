@@ -23,7 +23,7 @@ const purchasedIdList = async ({ userId }) => {
         });
       }
     });
-    console.log(result);
+
     return result;
   } catch (err) {
     throw new DatabaseError('INVALID_DATA');
