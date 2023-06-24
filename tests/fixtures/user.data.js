@@ -38,9 +38,19 @@ const gsUser = {
   gender: 'F',
 };
 
+const seUser = {
+  name: 'se',
+  password: 'testpassword!',
+  email: 'testse@kakao.com',
+  phone: '010-1234-1234',
+  address: '테헤란로427',
+  birth: '1998-01-02',
+  gender: 'F',
+};
+
 const defaltProductListEnum = Object.freeze({
   DEFAULT_LIMIT: 15,
   DEFAULT_OFFSET: 0,
 });
 
-module.exports = { kakaoUser, naverUser, cuUser, gsUser };
+module.exports = { kakaoUser, naverUser, cuUser, gsUser, seUser };

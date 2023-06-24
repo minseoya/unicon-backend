@@ -28,10 +28,10 @@ const createPayment = async (orderNumber) => {
       [totalAmount, userId]
     );
 
-    const [{ points }] = await queryRunner.query(
-      `SELECT points FROM users WHERE users.id = ?`,
-      [userId]
-    );
+    // const [{ points }] = await queryRunner.query(
+    //   `SELECT * FROM users WHERE users.id = ?`,
+    //   [userId]
+    // );
 
     const getProductName = await queryRunner.query(
       `SELECT p.names
@@ -90,12 +90,13 @@ const createPayment = async (orderNumber) => {
     return [
       {
         totalAmount: totalAmount,
-        updatePoint: points,
+        // updatePoint: points,
         productName: getProductName,
       },
     ];
   } catch (err) {
     await queryRunner.rollbackTransaction();
+    console.log(err);
     const error = new Error('INVALID_DATA_INPUT');
     error.statusCode = 500;
     throw error;
