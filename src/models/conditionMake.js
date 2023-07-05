@@ -10,13 +10,15 @@ class conditionMake {
   }
 
   mainCondition() {
-    if (this.mainCategory)
+    if (this.mainCategory) {
       this.condition.push(`main_category.id = ${this.mainCategory}`);
+    }
   }
 
   subCondition() {
-    if (this.subCategory)
+    if (this.subCategory) {
       this.condition.push(`sub_category.id = ${this.subCategory}`);
+    }
   }
 
   newCondition() {
