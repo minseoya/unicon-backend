@@ -1,6 +1,6 @@
 const appDataSource = require('./appDataSource');
 
-const conditionMake = require('./conditionMake');
+const { conditionMake } = require('./conditionMake');
 const { DatabaseError } = require('../middlewares/error');
 
 const searchProduct = async (word) => {
@@ -71,14 +71,14 @@ const getShowRoom = async () => {
   }
 };
 
-const getProductList = async (
+const getProductList = async ({
   mainCategory,
   subCategory,
   pricefilter,
   offset,
   limit,
-  isnew
-) => {
+  isnew,
+}) => {
   try {
     let filter = new conditionMake(
       mainCategory,
@@ -94,7 +94,6 @@ const getProductList = async (
     } else {
       versity ? (condition = `WHERE ` + versity) : (versity = ``);
     }
-    console.log(condition);
 
     const post = await appDataSource.query(
       `SELECT

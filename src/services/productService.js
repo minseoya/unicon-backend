@@ -19,14 +19,14 @@ const getProductList = async (
   limit,
   isnew
 ) => {
-  return await productDao.getProductList(
+  return await productDao.getProductList({
     mainCategory,
     subCategory,
     pricefilter,
     offset,
     limit,
-    isnew
-  );
+    isnew,
+  });
 };
 
 module.exports = {
