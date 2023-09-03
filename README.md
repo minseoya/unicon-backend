@@ -44,6 +44,32 @@
 </div>
 <br/>
 
+## 📍디렉토리 구조
+
+  ```bash
+├── src
+│   ├── routes
+│   ├── controllers
+│   ├── services
+│   ├── middlewares   
+│   ├── db   
+│   └── models      
+│                   
+│                   
+├── tests
+├── app.js
+├── server.js
+├── settings.json
+├── .env
+├── .env.test
+├── .eslintrc
+├── .prettierrc
+├── README.md
+├── package-lock.json
+└── package.json
+  ```
+
+
 <br />
 
 ## ERD 구조
