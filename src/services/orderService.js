@@ -43,6 +43,7 @@ const createOrderAndItems = async (userId) => {
     };
   } catch (err) {
     await queryRunner.rollbackTransaction();
+    console.log(err);
     throw new Error(
       `Failed to create orders for userId ${userId}: ${err.message}`
     );

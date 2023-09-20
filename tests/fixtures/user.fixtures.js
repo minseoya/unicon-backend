@@ -30,5 +30,19 @@ const createUser = async (userList) => {
     [data]
   );
 };
+const createCart = async (userId) => {
+  return dataSource.query(
+    `INSERT INTO cart(
+      user_id,
+      product_items,
+      quantity
+ ) VALUES (?,2,1);
+`,
+    [userId]
+  );
+};
+const getOrderNumber = async () => {
+  return dataSource.query(`SELECT order_number As orderNumber FROM ORDERS`);
+};
 
-module.exports = { createUser };
+module.exports = { createUser, createCart, getOrderNumber };
